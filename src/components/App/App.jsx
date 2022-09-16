@@ -30,7 +30,7 @@ function App() {
         <h1 className="App-title">Gallery of My Life</h1>
       </header>
       <p>Gallery goes here</p>
-      <GalleryList gallery={gallery} />
+      <GalleryList gallery={gallery} getGallery={getGallery}/>
       {/* <img src="images/goat_small.jpg"/> */}
     </div>
   );
