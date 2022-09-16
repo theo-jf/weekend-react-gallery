@@ -1,8 +1,17 @@
+import { useState } from 'react';
+
 export default function GalleryItem({item}) {
+
+    const [description, setDescription] =  useState(false);
+
+    const showDescription = () => {
+        setDescription(!description);
+    }
+
     return (
         <>
-            <img src={item.path} />
-            <p className="description">{item.description}</p>
+            {(description === false) ? <img src={item.path} onClick={showDescription} /> : 
+            <p className="description" onClick={showDescription}>{item.description}</p>} 
             <p className="likes">{item.likes}</p>   
         </>
     );
