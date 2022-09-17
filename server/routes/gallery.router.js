@@ -49,7 +49,7 @@ router.get('/', (req, res) => {
 }); // END GET Route
 
 // POST Route
-router.get('/', (req, res) => {
+router.post('/', (req, res) => {
 
     const sqlText = `INSERT INTO "gallery"
                         ("path", "description")
