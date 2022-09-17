@@ -48,4 +48,23 @@ router.get('/', (req, res) => {
     });
 }); // END GET Route
 
+// POST Route
+router.get('/', (req, res) => {
+
+    const sqlText = `INSERT INTO "gallery"
+                        ("path", "description")
+                        VALUES
+                        ($1, $2)`
+
+    pool.query(sqlText, [req.body.path, req.body.description])
+    .then((result) => {
+        res.sendStatus(201);
+    })
+    .catch((error) => {
+        console.log(`Error making POST query ${sqlText}`, error);
+        res.sendStatus(500);
+    });
+
+})
+
 module.exports = router;
