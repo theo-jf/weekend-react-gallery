@@ -54,7 +54,9 @@ function App() {
         </Typography>
       </header>
       <GalleryForm getGallery={getGallery}/>
-      <p>Gallery goes here</p>
+      <Typography variant="h4" className="galleryTitle">
+        Images
+      </Typography>
       <GalleryList gallery={gallery} getGallery={getGallery}/>
       {/* <img src="images/goat_small.jpg"/> */}
       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
