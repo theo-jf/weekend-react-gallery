@@ -20,11 +20,23 @@ export default function GalleryItem({item, getGallery}) {
         })
     }
 
+    const deleteItem = (id) => {
+        axios.delete(`gallery/delete/${id}`)
+        .then((response) => {
+            console.log('Delete successful', response);
+            getGallery();
+        })
+        .catch((error) => {
+            console.log('Error deleting image', error);
+        })
+    }
+
     return (
         <>
             {(description === false) ? <img src={item.path} onClick={showDescription} /> : 
             <p className="description" onClick={showDescription}>{item.description}</p>} 
-            <p className="likes">{item.likes} <button onClick={() => like(item.id)}>Like Button</button></p>   
+            <p className="likes">{item.likes} <button onClick={() => like(item.id)}>Like Button</button>
+                                              <button onClick={() => deleteItem(item.id)}>Delete</button></p>   
         </>
     );
 }
