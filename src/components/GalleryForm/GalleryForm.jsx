@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Box, Button, TextField } from '@mui/material';
 
 export default function GalleryForm({getGallery}) {
 
     const [path, setPath] = useState('')
     const [description, setDescription] = useState('');
+
+    const [badPathSubmit, setBadPathSubmit] = useState(false);
+    const [badDescSubmit, setBadDescSubmit] = useState(false);
 
     const addItem = (newItem) => {
         console.log(newItem)
@@ -22,23 +26,52 @@ export default function GalleryForm({getGallery}) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        let newItem = {
-            path: path,
-            description: description
+        if (path != '') {
+            setBadPathSubmit(false);
         }
-        addItem(newItem);
+        if (description != '') {
+            setBadDescSubmit(false);
+        }
+        if (path != '' && description != '') {
+            let newItem = {
+                path: path,
+                description: description
+            }
+            addItem(newItem);
+        } if (path === '') {
+            setBadPathSubmit(true);
+        } if (description === '') {
+            setBadDescSubmit(true);
+        }
     }
 
     return (
-        <form className="form" onSubmit={handleSubmit}>
-            <input onChange={(e) => setPath(e.target.value)}
-                    value={path}
-                    placeholder="image link" />
-            <input onChange={(e) => setDescription(e.target.value)}
-                    value={description}
-                    placeholder="description" />
-            <input type="submit" value="Submit" />
-        </form>
+        <Box component="form" 
+             className="form" 
+             autoComplete="off"
+             sx={{
+                '& .MuiTextField-root': { m: 1, width: '25ch' },
+             }}
+             noValidate>
+            <div>
+                <TextField onChange={(e) => setPath(e.target.value)}
+                        error={(badPathSubmit === true) ? true : false}
+                        required={(badPathSubmit === true) ? true : false}
+                        value={path}
+                        label="image link" 
+                        helperText={(badPathSubmit === true) ? "required" : null}/>
+                <TextField onChange={(e) => setDescription(e.target.value)}
+                        error={(badDescSubmit === true) ? true : false}
+                        required={(badDescSubmit === true) ? true : false}
+                        value={description}
+                        label="description"
+                        helperText={(badDescSubmit === true) ? "required" : ""}/>
+                {/* <input type="submit" value="Submit" /> */}
+            </div>
+            <div>
+                <Button variant="contained" onClick={handleSubmit}>Upload</Button>
+            </div>
+        </Box>
     );
 
 }

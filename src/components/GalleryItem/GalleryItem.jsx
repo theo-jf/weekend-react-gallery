@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import Button from '@mui/material/Button';
 
 export default function GalleryItem({item, getGallery}) {
 
@@ -41,8 +42,8 @@ export default function GalleryItem({item, getGallery}) {
                                        <p className="description" onClick={showDescription}>{item.description}</p>}
             {(item.likes === 1) ? <p className="likes">{item.likes} like</p> : 
                                   <p className="likes">{item.likes} likes</p>}
-            <p><button onClick={() => like(item.id)}>Like</button>
-               <button onClick={() => deleteItem(item.id)}>Delete</button></p>   
+            <p><Button onClick={() => like(item.id)}>Like</Button>
+               <Button onClick={() => deleteItem(item.id)}>Delete</Button></p>   
         </>
     );
 }
