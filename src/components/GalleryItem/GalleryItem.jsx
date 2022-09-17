@@ -3,6 +3,7 @@ import axios from 'axios';
 
 export default function GalleryItem({item, getGallery}) {
 
+    // Boolean to render either description or image
     const [description, setDescription] =  useState(false);
 
     const showDescription = () => {
@@ -31,12 +32,17 @@ export default function GalleryItem({item, getGallery}) {
         })
     }
 
+    // Conditional rendering for:
+   //    Flipping between description and image
+   //    Proper grammar based on likes amount
     return (
         <>
             {(description === false) ? <img src={item.path} onClick={showDescription} /> : 
-            <p className="description" onClick={showDescription}>{item.description}</p>} 
-            <p className="likes">{item.likes} <button onClick={() => like(item.id)}>Like Button</button>
-                                              <button onClick={() => deleteItem(item.id)}>Delete</button></p>   
+                                       <p className="description" onClick={showDescription}>{item.description}</p>}
+            {(item.likes === 1) ? <p className="likes">{item.likes} like</p> : 
+                                  <p className="likes">{item.likes} likes</p>}
+            <p><button onClick={() => like(item.id)}>Like</button>
+               <button onClick={() => deleteItem(item.id)}>Delete</button></p>   
         </>
     );
 }
