@@ -17,8 +17,16 @@
   font-size: 1.5em;
 }
 
+.description:hover {
+  cursor: pointer; 
+}
+
 img {
   /* Make this 100 later (100X100 photos) */
   max-width: 160px;
+}
+
+img:hover {
+  cursor: pointer;
 }
 

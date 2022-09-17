@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import axios from 'axios';
-import Button from '@mui/material/Button';
+import { IconButton } from '@mui/material';
+import CancelIcon from '@mui/icons-material/Cancel'
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 
 export default function GalleryItem({item, getGallery}) {
 
@@ -42,8 +44,10 @@ export default function GalleryItem({item, getGallery}) {
                                        <p className="description" onClick={showDescription}>{item.description}</p>}
             {(item.likes === 1) ? <p className="likes">{item.likes} like</p> : 
                                   <p className="likes">{item.likes} likes</p>}
-            <p><Button onClick={() => like(item.id)}>Like</Button>
-               <Button onClick={() => deleteItem(item.id)}>Delete</Button></p>   
+            <p><IconButton onClick={() => deleteItem(item.id)}
+                    size="small" className="delete"><CancelIcon /></IconButton>
+               <IconButton onClick={() => like(item.id)}
+                    size="small" color="primary"><ThumbUpIcon/></IconButton></p>   
         </>
     );
 }

@@ -68,7 +68,7 @@ export default function GalleryForm({getGallery}) {
                         helperText={(badDescSubmit === true) ? "required" : ""}/>
                 {/* <input type="submit" value="Submit" /> */}
             </div>
-            <div>
+            <div className="upload">
                 <Button variant="contained" onClick={handleSubmit}>Upload</Button>
             </div>
         </Box>
