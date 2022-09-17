@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Box, Button, TextField } from '@mui/material';
+import { Box, Button, TextField, Snackbar } from '@mui/material';
+import MuiAlert from '@mui/material/Alert';
 
 export default function GalleryForm({getGallery}) {
 
@@ -9,6 +10,26 @@ export default function GalleryForm({getGallery}) {
 
     const [badPathSubmit, setBadPathSubmit] = useState(false);
     const [badDescSubmit, setBadDescSubmit] = useState(false);
+
+      // Mui variable to show/hide snackbar error message
+    const [open, setOpen] = React.useState(false);
+
+    const Alert = React.forwardRef(function Alert(props, ref) {
+        return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+    });
+
+    const handleError = () => {
+        setOpen(true);
+    };
+    
+    // Closing error message handler
+    const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+        return;
+    }
+    setOpen(false);
+    }
+
 
     const addItem = (newItem) => {
         console.log(newItem)
@@ -21,6 +42,7 @@ export default function GalleryForm({getGallery}) {
             })
             .catch(error => {
                 console.log('/gallery POST error', error);
+                handleError();
             });
     }
 
@@ -71,6 +93,11 @@ export default function GalleryForm({getGallery}) {
             <div className="upload">
                 <Button variant="contained" onClick={handleSubmit}>Upload</Button>
             </div>
+            <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+                <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
+                    Error uploading item
+                </Alert>
+            </Snackbar>
         </Box>
     );
 
