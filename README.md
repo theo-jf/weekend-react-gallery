@@ -15,14 +15,14 @@ Full assignment details can be found in [`INSTRUCTIONS.md`](INSTRUCTIONS.md)
 
 ## Final Product Snapshot
 
-![Wireframe](./public/images/React_Gallery_Snapshot.png)
+![Wireframe](./wireframes/React_Gallery_Snapshot.png)
 
 ### Prerequisites
     • Node.js
 
 ## Installation and Setup
 
-Visit the fully deployed app at [here]()
+Visit the fully deployed app at [here](https://ancient-earth-47145.herokuapp.com/)
 
 Or, run it locally:
 
