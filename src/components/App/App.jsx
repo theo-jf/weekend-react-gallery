@@ -50,7 +50,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Typography variant="h2" guttertop="true" className="App-title">
-          Gallery of My Life
+          Cat Gallery
         </Typography>
       </header>
       <GalleryForm getGallery={getGallery}/>

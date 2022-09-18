@@ -16,18 +16,14 @@ body {
   font-size: 1.5em;
 }
 
-.description{
-  min-height: 100px;
-  margin: 0%;
-  padding: 0%;
-}
-
 .description:hover {
   cursor: pointer; 
 }
 
 .form {
   padding: 30px;
+  padding-left: 5%;
+  padding-right: 7%;
   background-color: aliceblue;
   margin: 0;
 
@@ -38,18 +34,26 @@ body {
 }
 
 .gallery {
-  max-width: 60%;
+  max-width: 100%;
   margin: auto;
   text-align: center;
-  padding-bottom: 30px;
+  margin-left: -15px;
+  padding-bottom: 170px;
 }
 
 .galleryItem {
   display: inline-block;
   text-align: center;
-  margin: 50px;
-  width: 100px;
-  height: 100px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  margin-left: 3%;
+  margin-right: 3%;
+  max-width: 300px;
+  max-height: 300px;
+  width: 93.75%;
+  height: 93.75%;
+  min-height: 300px;
+  min-width: 253px;
 
 }
 
@@ -58,21 +62,18 @@ body {
   padding-bottom: 0px;
 }
 
-img {
-  /* Make this 100 later (100X100 photos) */
-  max-width: 100px;
-  max-height: 100px;
-}
-
 img:hover {
   cursor: pointer;
 }
 
 /* Polaroid styling below */
 .polaroid {
-  width: 120px;
+  /* max-width: 320px; */
+  width:  100%;
+  height: 100%;
+  min-height: 100%;
+  min-width: 220px;
   background: #ffffff;
-  margin: 10px;
   padding: 15px 15px 10px;
   -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
   -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
@@ -91,3 +92,30 @@ img:hover {
   -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
   box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
 }
+
+.description{
+  /* max-height: 300px; */
+  width: 93.75%;
+  height: 93.75%;
+  min-height: 300px;
+  min-width: 253px;
+  /* min-width: 200px; */
+  margin: 0%;
+  padding: 0%;
+}
+
+img {
+  /* image always takes up full space of card */
+  width: 93.75%;
+  height: 93.75;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+/* .like {
+  margin: 5px;
+}
+
+.delete {
+  padding: 400px;
+} */
