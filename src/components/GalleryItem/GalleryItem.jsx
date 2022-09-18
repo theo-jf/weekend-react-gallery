@@ -47,7 +47,7 @@ export default function GalleryItem({item, getGallery}) {
             <p><IconButton onClick={() => deleteItem(item.id)}
                     size="small" className="delete"><CancelIcon /></IconButton>
                <IconButton onClick={() => like(item.id)}
-                    size="small" color="primary"><ThumbUpIcon/></IconButton></p>   
+                    size="small" className="like" color="primary"><ThumbUpIcon/></IconButton></p>   
         </>
     );
 }

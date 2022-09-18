@@ -108,4 +108,14 @@ img {
   /* image always takes up full space of card */
   width: 93.75%;
   height: 93.75;
+  max-height: 300px;
+  object-fit: cover;
 }
+
+/* .like {
+  margin: 5px;
+}
+
+.delete {
+  padding: 400px;
+} */
