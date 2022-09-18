@@ -72,7 +72,7 @@ export default function GalleryForm({getGallery}) {
              className="form" 
              autoComplete="off"
              sx={{
-                '& .MuiTextField-root': { m: 1, width: '25ch' },
+                '& .MuiTextField-root': { m: 1 },
              }}
              noValidate>
             <div>
@@ -80,13 +80,15 @@ export default function GalleryForm({getGallery}) {
                         error={(badPathSubmit === true) ? true : false}
                         required={(badPathSubmit === true) ? true : false}
                         value={path}
-                        label="image link" 
+                        label="image link"
+                        fullWidth
                         helperText={(badPathSubmit === true) ? "required" : null}/>
                 <TextField onChange={(e) => setDescription(e.target.value)}
                         error={(badDescSubmit === true) ? true : false}
                         required={(badDescSubmit === true) ? true : false}
                         value={description}
                         label="description"
+                        fullWidth
                         helperText={(badDescSubmit === true) ? "required" : ""}/>
                 {/* <input type="submit" value="Submit" /> */}
             </div>
