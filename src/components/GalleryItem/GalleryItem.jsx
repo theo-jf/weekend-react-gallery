@@ -40,7 +40,7 @@ export default function GalleryItem({item, getGallery}) {
    //    Proper grammar based on likes amount
     return (
         <>
-            {(description === false) ? <img src={item.path} onClick={showDescription} /> : 
+            {(description === false) ? <img className="description" src={item.path} onClick={showDescription} /> : 
                                        <p className="description" onClick={showDescription}>{item.description}</p>}
             {(item.likes === 1) ? <p className="likes">{item.likes} like</p> : 
                                   <p className="likes">{item.likes} likes</p>}

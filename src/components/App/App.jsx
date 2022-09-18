@@ -54,10 +54,12 @@ function App() {
         </Typography>
       </header>
       <GalleryForm getGallery={getGallery}/>
-      <Typography variant="h4" className="galleryTitle">
-        Images
-      </Typography>
-      <GalleryList gallery={gallery} getGallery={getGallery}/>
+      <section className="bottom">
+        {/* <Typography variant="h4" className="galleryTitle">
+          Images
+        </Typography> */}
+        <GalleryList gallery={gallery} getGallery={getGallery}/>
+      </section>
       {/* <img src="images/goat_small.jpg"/> */}
       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
