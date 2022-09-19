@@ -22,7 +22,7 @@ Full assignment details can be found in [`INSTRUCTIONS.md`](INSTRUCTIONS.md)
 
 ## Installation and Setup
 
-Visit the fully deployed app at [here](https://ancient-earth-47145.herokuapp.com/)
+Visit the fully deployed app [here](https://ancient-earth-47145.herokuapp.com/)
 
 Or, run it locally:
 
