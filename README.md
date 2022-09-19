@@ -29,8 +29,9 @@ Or, run it locally:
 1. Clone this repository from Github
 2. Create a database titled "react_gallery" and create a "gallery" table using the initializer found in `database.sql`
 3. Run `npm install` in your terminal to download the necessary modules
-4. Run `npm start` to start the server
-5. Visit http://localhost:3000 in your browser to view the project!
+4. Run `npm run client` to start React
+5. In a separate terminal, run `npm run server` to start the server
+6. Visit http://localhost:3000 in your browser to view the project!
 
 ## Usage
 
